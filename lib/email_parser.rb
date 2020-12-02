@@ -11,6 +11,8 @@
    end
    
    def parse 
+     parse = []
+     parse << self 
    end 
   
  end 
