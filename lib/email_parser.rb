@@ -5,14 +5,16 @@
  
  
  class EmailAddressParser
+   attr_accessor :email_string
    
    def initialize(email_string)
+     @email_string << email_string
      
    end
    
    def parse 
      parse = []
-     parse << self 
+     parse << @email_string
    end 
   
  end 
