@@ -6,15 +6,12 @@
  
  class EmailAddressParser
    
-
-   def initialize(email)
-   
-   @email = email
- end 
-   
-   def parse 
-    x = @email.split(/[ ,]/)
-    x.reject { |c| c.empty?}.uniq
+   def initialize(stream_email)
+     @stream_email = stream_email
    end 
    
+   def parse
+     parse_email = @stream_email.split(/[ ,]/)
+     parse_email.reject { |c| c.empty? }.uniq
+   end 
  end 
