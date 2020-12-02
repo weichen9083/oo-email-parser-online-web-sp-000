@@ -4,17 +4,14 @@
 # or whitespace (' ').
  
  
- class EmailAddressParser
-   attr_accessor :email_string
+class EmailAddressParser
    
-   def initialize(email_string)
-     @email_string << email_string
-     
-   end
-   
-   def parse 
-     parse = []
-     parse << @email_string
+   def initialize(stream_email)
+     @stream_email = stream_email
    end 
-  
+   
+   def parse
+     parse_email = @stream_email.split(/[ ,]/)
+     parse_email.reject { |c| c.empty? }.uniq
+   end 
  end 
